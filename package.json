@@ -29,6 +29,9 @@
     "optimist": "0.3.4",
     "moment": "1.7.0"
   },
+  "optionalDependencies": {
+    "node-grok": "0.1.0"
+  },
   "directories": {
     "test": "./test",
     "bin": "./bin"

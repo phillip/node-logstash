@@ -206,6 +206,22 @@ Params:
 * type: if this field is set, only the lines of logs with the same type will be processed by this filter.
 * date\_format: if date_format is specified and a ``timestamp`` field is extracted, the plugin will process the data extracted with the date\_format, using [moment](http://momentjs.com/docs/#/parsing/string-format/). The result will replace the original timestamp of the log line.
 
+Grok
+---
+
+The grok filter is used to extract data from lines of logs with node-grok. The lines of logs are not modified by this filter.
+
+Example: ``filter://grok://?only_type=syslog&pattern=%{SYSLOGLINE}``, to extract fields from a syslog file.
+
+Params:
+
+* pattern: the grok pattern to apply
+* patterns_dir: directory for additional patterns
+* break_on_match: break after a single pattern matches, default is true
+* named_captures_only: only capture named grok patterns, default is true
+* keep_empty_captures: keep defined groups that do not match anything, default is false
+* singles: make single-value fields simply that value, not an array containing that one value, default is false
+
 Mutate replace
 ---
 
